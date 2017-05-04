@@ -1,0 +1,50 @@
+---
+title: "DATA PRODUCTS"
+author: "Varun Negi"
+date: "1 May 2017"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Overview
+
+This presentation is a part of deliverable required for Data Products Course week 4 project.
+
+# Web Application
+
+This web application calculates linear regression of different variables at MTCars data set. The application provides user with three different inputs:
+
+Select first variable of the regression either:
+
+Mile per Gallon (mpg),
+or Horse Power (hp),
+Select second variable one of three:
+
+Cylinders,
+Transmission,
+and Gears
+User can select if he\ she wants to show straight line representing linear prediction or not.
+
+# Getting Data
+
+This is the data of MTCars Dataset with various columns where we build a linear regression model among variables across all data at the dataset.
+```{r}
+head(mtcars)
+```
+# Linear Regression (mpg ~ cyl)
+
+```{r}
+data("mtcars")
+ mtcars.cyl.formula <- mpg ~ cyl
+    mtcars.cyl.lm <- lm(formula=mtcars.cyl.formula, data=mtcars)
+     
+```    
+
+# Scatterplot
+```{r}      
+plot(mtcars.cyl.formula, data=mtcars)
+abline(mtcars.cyl.lm,col="Red")
+```
